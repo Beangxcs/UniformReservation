@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:padding="16dp">
+
+        <!-- ImageView for University Logo -->
+        <ImageView
+            android:id="@+id/univ_logo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/univlogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- TextView for text to the right of ImageView -->
+        <TextView
+            android:id="@+id/uniformRSO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RSO"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/univ_logo"
+            app:layout_constraintTop_toTopOf="@id/univ_logo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/uniformDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@id/uniformRSO"
+            app:layout_constraintTop_toBottomOf="@id/uniformRSO"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/uniformSizes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size: Small"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@id/uniformDescription"
+            app:layout_constraintTop_toBottomOf="@id/uniformDescription"
+            android:layout_marginTop="8dp"/>
+
+        <!-- LinearLayout for Green Indicator and Availability Text -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/uniformSizes"
+            app:layout_constraintTop_toBottomOf="@id/uniformSizes"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Green Circle Indicator -->
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/circle_indicator"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Availability Text -->
+            <TextView
+                android:id="@+id/uniformAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

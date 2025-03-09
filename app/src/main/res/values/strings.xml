@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UniformReservation</string>
+    <string name="notification_icon_desc">Notification icon</string>
+    <string name="home_text">Home</string>
+</resources>
