@@ -1,5 +1,7 @@
 package com.example.uniformreservation.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Login (
     val username: String,
     val password: String

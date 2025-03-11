@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         loginbtn.setOnClickListener {
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+            finish()
             Log.i("Test Credentials", "Username: $username and Password: $password")
         }
 

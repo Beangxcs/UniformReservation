@@ -7,15 +7,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:padding="16dp">
+        android:layout_height="200dp"
+        android:padding="16dp"
+        android:layout_marginTop="20dp">
 
         <!-- ImageView for University Logo -->
         <ImageView
             android:id="@+id/univ_logo"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/univlogo"
+            android:src="@drawable/citelogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
