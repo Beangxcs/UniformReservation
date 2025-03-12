@@ -55,6 +55,8 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation("androidx.gridlayout:gridlayout:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    }
 
 
-}
+

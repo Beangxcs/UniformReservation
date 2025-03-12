@@ -13,6 +13,12 @@
         android:theme="@style/Theme.UniformReservation"
         tools:targetApi="31">
         <activity
+            android:name=".RSO_Uniform"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity

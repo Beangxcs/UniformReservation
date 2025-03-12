@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HomePage">
+    tools:context=".HomePage"
+    app:cardElevation="4dp">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -62,6 +63,6 @@
         android:layout_height="70dp"
         android:background="@color/lightgreen"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav" />
+        app:menu="@menu/bottom_nav"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

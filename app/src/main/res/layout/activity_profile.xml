@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,4 +8,163 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lightgreen"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/univlogo"
+            android:contentDescription="Logo"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROFILE"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="10dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Profile Card (Above Username Input) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_card"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/username_input"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" >
+
+        <LinearLayout
+            android:layout_width="196dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Profile Image -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/baseline_person_3_24" />
+
+            <!-- Change Profile Button -->
+            <Button
+                android:id="@+id/btn_change_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/lightgreen"
+                android:text="Change Profile"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Username Input (Below CardView) -->
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/username_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawablePadding="15dp"
+        android:elevation="10dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:padding="18dp"
+        android:paddingStart="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_card"
+        android:layout_margin="15dp"
+       /> <!-- Consistent margin -->
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:drawablePadding="15dp"
+        android:elevation="10dp"
+        android:hint="Email"
+        android:inputType="text"
+        android:padding="18dp"
+        android:paddingStart="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_input"
+        android:layout_margin="15dp" /> <!-- Consistent margin -->
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:drawableStart="@drawable/baseline_local_phone_24"
+        android:drawablePadding="15dp"
+        android:elevation="10dp"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:padding="18dp"
+        android:paddingStart="12dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email"
+        android:layout_margin="15dp" /> <!-- Consistent margin -->
+
+    <!-- Register Button (Below Phone Number Input) -->
+
+
+    <Button
+        android:id="@+id/btnsavechange_button"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/gold"
+        android:text="Save Change"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_phone" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lightgreen"
+        app:menu="@menu/bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
