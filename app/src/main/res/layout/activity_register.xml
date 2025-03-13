@@ -80,6 +80,7 @@
                 android:drawablePadding="12dp"
                 android:inputType="text" />
 
+            <!-- Password -->
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -93,9 +94,10 @@
                 android:padding="16dp"
                 android:drawableStart="@drawable/baseline_lock_24"
                 android:drawableEnd="@drawable/baseline_remove_red_eye_24"
-            android:drawablePadding="12dp"
-            android:inputType="textPassword" />
+                android:drawablePadding="12dp"
+                android:inputType="textPassword" />
 
+            <!-- Confirm Password -->
             <EditText
                 android:id="@+id/confirmpassword_input"
                 android:layout_width="match_parent"
@@ -109,9 +111,26 @@
                 android:padding="16dp"
                 android:drawableStart="@drawable/baseline_lock_24"
                 android:drawableEnd="@drawable/baseline_remove_red_eye_24"
-            android:drawablePadding="12dp"
-            android:inputType="textPassword" />
+                android:drawablePadding="12dp"
+                android:inputType="textPassword" />
 
+            <!-- Role Dropdown -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Role"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/role_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp" />
 
             <!-- Register Button -->
             <Button
