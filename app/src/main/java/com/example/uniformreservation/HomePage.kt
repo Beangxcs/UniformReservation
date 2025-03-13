@@ -1,9 +1,11 @@
 package com.example.uniformreservation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.uniformreservation.model.Uniform
 
 class HomePage : AppCompatActivity() {
@@ -25,5 +27,28 @@ class HomePage : AppCompatActivity() {
         // Set Adapter
         val adapter = HomeAdapter(uniformList)
         recyclerView.adapter = adapter
+
+        // Bottom Navigation
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.nav_home // Highlight the current tab
+
+        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> true // Already here
+                R.id.nav_categories -> {
+                    startActivity(Intent(this, Categories::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

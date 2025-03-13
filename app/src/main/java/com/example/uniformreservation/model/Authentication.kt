@@ -8,14 +8,19 @@ data class Login (
 )
 
 data class LoginResponse (
-    val token: String,
     val message: String
 )
 
 data class Register (
-    @SerializedName("first_name")
+    @SerializedName("user_id")
+    val userId: Int,
+    @SerializedName("fullname")
     val fullName: String,
     val username: String,
     val password: String,
-    val email: String
+    val role: String
+)
+
+data class RegisterResponse (
+    val message: String
 )
