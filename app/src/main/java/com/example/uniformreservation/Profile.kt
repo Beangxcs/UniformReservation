@@ -22,12 +22,7 @@ class Profile : AppCompatActivity() {
                     finish()
                     true
                 }
-                R.id.nav_categories -> {
-                    startActivity(Intent(this, Categories::class.java))
-                    overridePendingTransition(0, 0)
-                    finish()
-                    true
-                }
+
                 R.id.nav_profile -> true // Already here
                 else -> false
             }

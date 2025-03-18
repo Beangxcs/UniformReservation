@@ -4,10 +4,12 @@ import com.example.uniformreservation.model.Login
 import com.example.uniformreservation.model.LoginResponse
 import com.example.uniformreservation.model.Register
 import com.example.uniformreservation.model.RegisterResponse
+import com.example.uniformreservation.model.Uniform
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -28,4 +30,9 @@ interface ApiService {
         @Field("password") password: String,
         @Field("role") role: String
     ): Response<RegisterResponse>
+
+    @FormUrlEncoded
+    @GET("/uniform.php")
+    suspend fun getUniform(): Response<Uniform>
+
 }

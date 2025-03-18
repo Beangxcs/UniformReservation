@@ -46,7 +46,7 @@ class Register : AppCompatActivity() {
         roleSpinner = findViewById(R.id.role_spinner)
 
         // 🟢 1. Define your roles
-        val roles = listOf("User", "Admin")
+        val roles = listOf("Student", "Teacher")
 
         // 🟢 2. Create an ArrayAdapter and set it to the Spinner
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roles)

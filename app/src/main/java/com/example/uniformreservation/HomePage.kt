@@ -19,9 +19,9 @@ class HomePage : AppCompatActivity() {
 
         // Sample Data
         val uniformList = listOf(
-            Uniform(R.drawable.citelogo, "Uniform A", "Comfortable cotton uniform", "S, M, L", "Available"),
-            Uniform(R.drawable.citelogo, "Uniform B", "Polyester blend, durable", "M, L, XL", "Limited"),
-            Uniform(R.drawable.citelogo, "Uniform C", "Lightweight and breathable", "S, M", "Out of Stock")
+            Uniform( "Uniform A", "Comfortable cotton uniform", "S, M, L", "Available"),
+            Uniform( "Uniform B", "Polyester blend, durable", "M, L, XL", "Limited"),
+            Uniform( "Uniform C", "Lightweight and breathable", "S, M", "Out of Stock")
         )
 
         // Set Adapter
@@ -35,12 +35,7 @@ class HomePage : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> true // Already here
-                R.id.nav_categories -> {
-                    startActivity(Intent(this, Categories::class.java))
-                    overridePendingTransition(0, 0)
-                    finish()
-                    true
-                }
+
                 R.id.nav_profile -> {
                     startActivity(Intent(this, Profile::class.java))
                     overridePendingTransition(0, 0)
@@ -48,6 +43,7 @@ class HomePage : AppCompatActivity() {
                     true
                 }
                 else -> false
+
             }
         }
     }

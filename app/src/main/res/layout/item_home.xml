@@ -7,11 +7,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_marginTop="20dp">
 
-        <!-- ImageView for University Logo -->
+        <!-- University Logo -->
         <ImageView
             android:id="@+id/univ_logo"
             android:layout_width="150dp"
@@ -21,69 +21,56 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- TextView for text to the right of ImageView -->
+        <!-- RSO Title -->
+
+        <!-- Size -->
+
         <TextView
             android:id="@+id/uniformRSO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
             android:text="RSO"
-            android:textSize="20sp"
             android:textColor="@android:color/black"
+            android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/univ_logo"
-            app:layout_constraintTop_toTopOf="@id/univ_logo"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:id="@+id/uniformDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Description:"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            app:layout_constraintStart_toStartOf="@id/uniformRSO"
-            app:layout_constraintTop_toBottomOf="@id/uniformRSO"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintTop_toTopOf="@id/univ_logo" />
 
         <TextView
             android:id="@+id/uniformSizes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Size: Small"
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:textColor="@android:color/black"
-            app:layout_constraintStart_toStartOf="@id/uniformDescription"
-            app:layout_constraintTop_toBottomOf="@id/uniformDescription"
-            android:layout_marginTop="8dp"/>
-
-        <!-- LinearLayout for Green Indicator and Availability Text -->
-        <LinearLayout
+            app:layout_constraintStart_toStartOf="@id/uniformRSO"
+            app:layout_constraintTop_toBottomOf="@id/uniformRSO"
+            android:layout_marginTop="30dp" />
+        
+        <TextView
+            android:id="@+id/uniformDepartment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:text="Department"
+            android:textSize="17sp"
+            android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="@id/uniformSizes"
             app:layout_constraintTop_toBottomOf="@id/uniformSizes"
-            android:layout_marginTop="8dp"
-            android:gravity="center_vertical">
+            android:layout_marginTop="10dp" />
 
-            <!-- Green Circle Indicator -->
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@drawable/circle_indicator"
-                android:layout_marginEnd="8dp"/>
-
-            <!-- Availability Text -->
-            <TextView
-                android:id="@+id/uniformAvailability"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Available"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"/>
-        </LinearLayout>
+        <!-- Category -->
+        <TextView
+            android:id="@+id/tvcategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="17dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@id/uniformDepartment"
+            app:layout_constraintTop_toBottomOf="@id/uniformDepartment"
+            android:layout_marginTop="10dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
