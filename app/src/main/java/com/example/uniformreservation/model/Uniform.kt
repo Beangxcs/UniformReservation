@@ -1,9 +1,17 @@
 package com.example.uniformreservation.model
 
+data class UniformResponse(
+    val message: String,
+    val code: Int,
+    val rows: List<Uniform>?
+)
+
 data class Uniform(
-    var name: String,
-    var category: String,
-    var size: String,
-    var status: String,
-    var department: String
+    val id: Int? = null,
+    val category: String,
+    val name: String,
+    val image_url: String,
+    val size: String,
+    val department: String,
+    val available: Int? = null
 )

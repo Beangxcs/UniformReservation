@@ -2,8 +2,6 @@ package com.example.uniformreservation.controller
 
 import com.example.uniformreservation.api.ApiService
 import com.example.uniformreservation.api.RetrofitInstance
-import com.example.uniformreservation.model.Login
-import com.example.uniformreservation.model.Register
 
 object AuthenticationController {
     var loginSuccess: Boolean? = null

@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 object RetrofitInstance {
 
-    private const val BASE_URL = "http://192.168.1.17:8000/"
+    private const val BASE_URL = "http://192.168.1.141:8000/"
 
     // Add the logging interceptor
     private val logging = HttpLoggingInterceptor().apply {

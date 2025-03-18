@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.uniformreservation.model.Uniform
 import com.example.uniformreservation.R
 
@@ -30,20 +31,18 @@ class HomeAdapter(private val lists: List<Uniform>) : RecyclerView.Adapter<HomeA
         val item = lists[position]
         holder.nameTextView.text = item.name
         holder.sizeTextView.text = item.size
-        holder.imageView.setImageResource(R.drawable.citelogo)
+        holder.imageView.load(item.image_url)
         holder.categoryTextView.text = item.category
         holder.departmentTextView.text = item.department
-        // Add click listener to the entire item view (CardView)
+
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
             val intent = Intent(it.context, ViewUniform::class.java)
-            intent.putExtra("image",R.drawable.citelogo)
+            intent.putExtra("image",item.image_url)
             intent.putExtra("category", item.category)
             intent.putExtra("name", item.name)
             intent.putExtra("size", item.size)
             intent.putExtra("department", item.department)
-
-
+            it.context.startActivity(intent)
         }
     }
 

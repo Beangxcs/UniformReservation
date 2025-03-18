@@ -20,12 +20,6 @@
             android:name=".ViewUniform"
             android:exported="false" />
         <activity
-            android:name=".CorpoMale_Uniform"
-            android:exported="false" />
-        <activity
-            android:name=".CorpoFemale_Uniform"
-            android:exported="false" />
-        <activity
             android:name=".RSO_Uniform"
             android:exported="false" />
         <activity
@@ -35,13 +29,7 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".Categories"
-            android:exported="false" />
-        <activity
             android:name=".ForgotPassword"
-            android:exported="false" />
-        <activity
-            android:name=".Pages"
             android:exported="false" />
         <activity
             android:name=".HomePage"

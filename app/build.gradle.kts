@@ -56,7 +56,7 @@ dependencies {
     implementation("androidx.gridlayout:gridlayout:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation("io.coil-kt:coil:1.4.0")
     }
 
 
