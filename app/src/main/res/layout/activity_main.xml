@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    android:background="@drawable/background"
+    android:background="@drawable/bgwaves"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,9 +21,7 @@
             android:layout_height="200dp"
             android:background="@drawable/univlogo"
             android:layout_marginTop="30dp"
-            android:contentDescription="Logo of UPang"
-            />
-
+            android:contentDescription="Logo of UPang" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,41 +33,68 @@
             android:id="@+id/tvwelcomeback"
             android:layout_marginTop="10dp"/>
 
-        <EditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:drawableStart="@drawable/baseline_person_24"
-         android:id="@+id/username_input"
-         android:layout_marginTop="32dp"
-         android:hint="Username"
-         android:textColor="@color/black"
-         android:textColorHint="@color/black"
-         android:textSize="20sp"
-         android:background="@drawable/rounded_corner"
-         android:padding="18dp"
-         android:drawablePadding="15dp"
-         android:paddingStart="12dp"
-         android:elevation="10dp"
-         android:inputType="text" />
 
-     <EditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:drawableStart="@drawable/baseline_lock_24"
-         android:layout_marginTop="25dp"
-         android:id="@+id/password_input"
-         android:hint="Password"
-         android:textColor="@color/black"
-         android:textColorHint="@color/black"
-         android:textSize="20sp"
-         android:background="@drawable/rounded_corner"
-         android:padding="18dp"
-         android:paddingStart="12dp"
-         android:drawablePadding="15dp"
-         android:inputType="textPassword"
-         android:elevation="10dp"
-         android:drawableEnd="@drawable/baseline_remove_red_eye_24"/>
 
+        <!-- Email Field with Floating Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="E-mail"
+            app:hintTextColor="@color/black"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/gray"
+            app:boxBackgroundColor="@android:color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_email_24"
+            app:endIconTint="@color/gray"
+            android:elevation="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="20sp"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Field with Floating Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="Password"
+            app:hintTextColor="@color/black"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/gray"
+            app:boxBackgroundColor="@android:color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/gray"
+            android:elevation="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="20sp"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/forgot_Password"
@@ -100,39 +125,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/dont_have_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don’t have an account?"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            android:focusable="true"
-            android:minWidth="48dp"
-            android:minHeight="48dp"/>
+            <TextView
+                android:id="@+id/dont_have_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don’t have an account?"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:focusable="true"
+                android:minWidth="48dp"
+                android:minHeight="48dp"/>
 
-        <TextView
-            android:id="@+id/tvRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:textSize="19sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="3dp"/>
-
-
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="3dp"/>
         </LinearLayout>
     </LinearLayout>
-
-
 </RelativeLayout>

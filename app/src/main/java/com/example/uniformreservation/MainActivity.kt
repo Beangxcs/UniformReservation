@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.login_btn)
         forgotPassword = findViewById(R.id.forgot_Password)
         tvRegister = findViewById(R.id.tvRegister)
-
         // Set up password visibility toggle
         setupPasswordToggle(passwordInput, R.id.password_input)
 
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
-
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter both email and password.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener

@@ -1,5 +1,6 @@
 package com.example.uniformreservation.controller
 
+import android.util.Log
 import com.example.uniformreservation.api.ApiService
 import com.example.uniformreservation.api.RetrofitInstance
 
@@ -11,15 +12,22 @@ object AuthenticationController {
             val apiService = RetrofitInstance.create(ApiService::class.java)
             val response = apiService.login(username, password)
 
-            return if (response.isSuccessful) {
-                loginSuccess = true
-                response.body()?.message ?: "Login successful"
+            if (response.isSuccessful) {
+                val loginResponse = response.body()
+                return if (loginResponse?.user_id != null && loginResponse.message == "Correct Password") {
+                    loginSuccess = true
+                    "Login successful" // Or use loginResponse.message
+                } else {
+                    loginSuccess = false
+                    "Login failed: ${loginResponse?.message ?: "Unknown error"}"
+                }
             } else {
                 loginSuccess = false
-                "Login failed: ${response.errorBody()?.string() ?: "Unknown error"}"
+                Log.d("Login error", "$response")
+                "Login failed: ${response.errorBody()?.string() ?: "Server error"}"
             }
-
         } catch (e: Exception) {
+            Log.d("Login error exception", "Exception: $e")
             e.printStackTrace()
             loginSuccess = false
             "Login failed: ${e.message ?: "An unexpected error occurred"}"

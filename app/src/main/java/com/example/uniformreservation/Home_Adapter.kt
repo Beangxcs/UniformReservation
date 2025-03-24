@@ -31,13 +31,13 @@ class HomeAdapter(private val lists: List<Uniform>) : RecyclerView.Adapter<HomeA
         val item = lists[position]
         holder.nameTextView.text = item.name
         holder.sizeTextView.text = item.size
-        holder.imageView.load(item.image_url)
+        holder.imageView.load(item.image_url)  // This should now work with the coil.load import
         holder.categoryTextView.text = item.category
         holder.departmentTextView.text = item.department
 
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, ViewUniform::class.java)
-            intent.putExtra("image",item.image_url)
+            intent.putExtra("image", item.image_url)
             intent.putExtra("category", item.category)
             intent.putExtra("name", item.name)
             intent.putExtra("size", item.size)
@@ -48,14 +48,3 @@ class HomeAdapter(private val lists: List<Uniform>) : RecyclerView.Adapter<HomeA
 
     override fun getItemCount(): Int = lists.size
 }
-
-
-
-
-
-
-
-
-
-
-

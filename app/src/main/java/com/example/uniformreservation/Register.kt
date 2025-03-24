@@ -39,14 +39,14 @@ class Register : AppCompatActivity() {
 
         etLogin = findViewById(R.id.tvLogin)
         etFullName = findViewById(R.id.fullname_input)
-        etUsername = findViewById(R.id.username_input)
+        etUsername = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.password)
         etConfirmPassword = findViewById(R.id.confirmpassword_input)
         btnRegister = findViewById(R.id.register_button)
         roleSpinner = findViewById(R.id.role_spinner)
-        etUserId = findViewById(R.id.userid_input)
+        etUserId = findViewById(R.id.etuser_id)
 
-        val roles = listOf("Student", "Admin")
+        val roles = listOf("Student", "Teacher")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roles)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         roleSpinner.adapter = adapter

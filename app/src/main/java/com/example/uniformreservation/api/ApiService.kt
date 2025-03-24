@@ -14,7 +14,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("/login.php")
     suspend fun login(
-        @Field("email") username: String,
+        @Field("email") email: String,
         @Field("password") password: String
     ): Response<LoginResponse>
 
@@ -22,7 +22,7 @@ interface ApiService {
     @POST("/signup.php")
     suspend fun register(
         @Field("user_id") userId: Int,
-        @Field("fullname") fullName: String,
+        @Field("fullname") fullname: String,
         @Field("email") username: String,
         @Field("password") password: String,
         @Field("role") role: String
