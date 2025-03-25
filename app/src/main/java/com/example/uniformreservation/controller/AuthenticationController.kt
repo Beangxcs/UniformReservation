@@ -3,6 +3,8 @@ package com.example.uniformreservation.controller
 import android.util.Log
 import com.example.uniformreservation.api.ApiService
 import com.example.uniformreservation.api.RetrofitInstance
+import com.example.uniformreservation.manager.UserIdManager
+import kotlin.math.log
 
 object AuthenticationController {
     var loginSuccess: Boolean? = null
@@ -14,6 +16,7 @@ object AuthenticationController {
 
             if (response.isSuccessful) {
                 val loginResponse = response.body()
+                UserIdManager.saveUserId(loginResponse?.user_id ?: "0")
                 return if (loginResponse?.user_id != null && loginResponse.message == "Correct Password") {
                     loginSuccess = true
                     "Login successful" // Or use loginResponse.message
@@ -35,7 +38,7 @@ object AuthenticationController {
     }
 
     suspend fun register(
-        userId: Int,
+        userId: String,
         fullName: String,
         username: String,
         password: String,

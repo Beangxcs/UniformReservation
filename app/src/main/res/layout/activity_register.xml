@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="User Id"
+                android:hint="School ID"
                 app:hintTextColor="@color/black"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/gray"

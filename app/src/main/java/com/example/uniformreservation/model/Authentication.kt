@@ -1,7 +1,7 @@
 package com.example.uniformreservation.model
 
 data class LoginResponse (
-    val user_id: Int?,
+    val user_id: String,
     val message: String,
     val code: Int
 )

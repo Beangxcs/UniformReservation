@@ -46,7 +46,7 @@ class Register : AppCompatActivity() {
         roleSpinner = findViewById(R.id.role_spinner)
         etUserId = findViewById(R.id.etuser_id)
 
-        val roles = listOf("Student", "Teacher")
+        val roles = listOf("Student", "Admin")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roles)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         roleSpinner.adapter = adapter
@@ -74,8 +74,19 @@ class Register : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val userIdPattern = Regex("\\d{2}-\\d{4}-\\d{6}")
+            if (!userId.matches(userIdPattern)) {
+                Toast.makeText(this, "User ID must be in format xx-xxxx-xxxxxx (e.g., 03-2223-042870)", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (username.length <= 5) {
                 Toast.makeText(this, "Email should be at least 5 characters long", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -96,7 +107,7 @@ class Register : AppCompatActivity() {
 
             lifecycleScope.launch {
                 val result = withContext(Dispatchers.IO) {
-                    register(userId.toInt(), fullName, username, password, role)
+                    register(userId, fullName, username, password, role)
                 }
 
                 Toast.makeText(this@Register, result, Toast.LENGTH_SHORT).show()

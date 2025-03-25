@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.uniformreservation.controller.AuthenticationController
 import com.example.uniformreservation.manager.TokenManager
+import com.example.uniformreservation.manager.UserIdManager
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +31,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        TokenManager.init(applicationContext)
+        TokenManager.init(this)
+        UserIdManager.init(this)
+
+        if (UserIdManager.isLoggedIn()) {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         // Initialize views
         usernameInput = findViewById(R.id.username_input)

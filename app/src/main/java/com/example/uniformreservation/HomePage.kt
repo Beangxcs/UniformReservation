@@ -43,7 +43,7 @@ class HomePage : AppCompatActivity() {
 
     private fun loadUniforms(recyclerView: RecyclerView) {
         uniformController.fetchUniforms(object : UniformController.UniformCallback {
-            override fun onSuccess(uniforms: List<Uniform>) {
+            override fun onSuccess(uniforms: List<Uniform>) { // Changed to List<Uniform>
                 recyclerView.adapter = HomeAdapter(uniforms)
                 Log.d("UniformController", "Uniforms loaded successfully: $uniforms")
             }

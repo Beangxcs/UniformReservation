@@ -20,19 +20,19 @@ class UniformController {
             try {
                 val apiService = RetrofitInstance.create(ApiService::class.java)
                 val response = apiService.getUniform()
-                val uniforms = response.body()?.rows ?: emptyList()
+                val uniforms = response.body()?.rows ?: emptyList() // Directly get the list, default to empty if null
 
                 // Switch to Main thread for callback
                 CoroutineScope(Dispatchers.Main).launch {
                     if (response.isSuccessful) {
-                        callback.onSuccess(uniforms)
+                        callback.onSuccess(uniforms) // Pass the list directly
                     } else {
                         callback.onError("Error: ${response.code()}")
                     }
                 }
             } catch (e: Exception) {
                 CoroutineScope(Dispatchers.Main).launch {
-                    callback.onError("Network error")
+                    callback.onError("Network error: ${e.message}")
                 }
             }
         }

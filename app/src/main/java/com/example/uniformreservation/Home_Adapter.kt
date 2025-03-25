@@ -9,15 +9,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.uniformreservation.model.Uniform
-import com.example.uniformreservation.R
 
-class HomeAdapter(private val lists: List<Uniform>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(private val uniforms: List<Uniform>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.univ_logo)
         val nameTextView: TextView = itemView.findViewById(R.id.uniformRSO)
         val sizeTextView: TextView = itemView.findViewById(R.id.uniformSizes)
-        val categoryTextView: TextView = itemView.findViewById(R.id.tvcategory)
+        val totalAvailableTextView: TextView = itemView.findViewById(R.id.tvTotalAvailable)
         val departmentTextView: TextView = itemView.findViewById(R.id.uniformDepartment)
     }
 
@@ -28,23 +27,23 @@ class HomeAdapter(private val lists: List<Uniform>) : RecyclerView.Adapter<HomeA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = lists[position]
-        holder.nameTextView.text = item.name
-        holder.sizeTextView.text = item.size
-        holder.imageView.load(item.image_url)  // This should now work with the coil.load import
-        holder.categoryTextView.text = item.category
-        holder.departmentTextView.text = item.department
+        val uniform = uniforms[position]
+        holder.nameTextView.text = uniform.name
+        holder.sizeTextView.text = "Size: " + uniform.size
+        holder.imageView.load(uniform.image_url) // Loads the image URL using Coil
+        holder.totalAvailableTextView.text = "Total Available Uniform: " + uniform.available?.toString() ?: "0" // Convert Int? to String
+        holder.departmentTextView.text = "Department: " + uniform.department
 
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, ViewUniform::class.java)
-            intent.putExtra("image", item.image_url)
-            intent.putExtra("category", item.category)
-            intent.putExtra("name", item.name)
-            intent.putExtra("size", item.size)
-            intent.putExtra("department", item.department)
+            intent.putExtra("image", uniform.image_url)
+            intent.putExtra("totalAvailable", uniform.available ?: 0) // Use Int with default value
+            intent.putExtra("name", uniform.name)
+            intent.putExtra("size", uniform.size)
+            intent.putExtra("department", uniform.department)
             it.context.startActivity(intent)
         }
     }
 
-    override fun getItemCount(): Int = lists.size
+    override fun getItemCount(): Int = uniforms.size
 }

@@ -3,11 +3,13 @@ package com.example.uniformreservation.api
 import com.example.uniformreservation.model.LoginResponse
 import com.example.uniformreservation.model.RegisterResponse
 import com.example.uniformreservation.model.UniformResponse
+import com.example.uniformreservation.model.UserResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -21,7 +23,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("/signup.php")
     suspend fun register(
-        @Field("user_id") userId: Int,
+        @Field("user_id") userId: String,
         @Field("fullname") fullname: String,
         @Field("email") username: String,
         @Field("password") password: String,
@@ -31,4 +33,8 @@ interface ApiService {
     @GET("/uniforms.php")
     suspend fun getUniform(): Response<UniformResponse>
 
+    @GET("/user.php") // Adjust endpoint to match your server
+    suspend fun getUser(
+        @Query("user_id") userId: String
+    ): Response<UserResponse>
 }
