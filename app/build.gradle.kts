@@ -58,6 +58,12 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("io.coil-kt:coil:2.6.0")
     implementation ("com.google.android.material:material:1.9.0")
+    implementation("io.coil-kt:coil:2.0.0") // Check for the latest version on Coil GitHub
+    dependencies {
+        implementation("io.coil-kt:coil:2.3.0")
+    }
+
+
 }
 
 

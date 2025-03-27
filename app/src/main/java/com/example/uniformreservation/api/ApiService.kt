@@ -33,7 +33,7 @@ interface ApiService {
     @GET("/uniforms.php")
     suspend fun getUniform(): Response<UniformResponse>
 
-    @GET("/user.php") // Adjust endpoint to match your server
+    @GET("/user.php")
     suspend fun getUser(
         @Query("user_id") userId: String
     ): Response<UserResponse>

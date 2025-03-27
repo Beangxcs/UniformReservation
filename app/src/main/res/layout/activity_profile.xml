@@ -61,7 +61,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -105,40 +105,45 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Role TextView -->
+
+    <!-- Log Out Button -->
+
+    <!-- Bottom Navigation -->
     <TextView
         android:id="@+id/et_role"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:text="Role: Student"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/et_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/et_email" />
 
-    <!-- Log Out Button -->
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/gold"
         android:text="Log Out"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/et_role"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/et_role" />
 
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#435A44"
+        android:background="#3b4f26"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

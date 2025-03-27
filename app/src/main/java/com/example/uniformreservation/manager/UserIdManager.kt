@@ -20,20 +20,17 @@ object UserIdManager {
         Log.d("UserIdManager", "Saved user ID: $userId")
     }
 
-    // Retrieve the userId stored under KEY
-    fun getUserId(): String? { // Changed return type to String? to handle null case
-        val userId = preferences.getString(KEY, null) // Default to null if not found
+    fun getUserId(): String? {
+        val userId = preferences.getString(KEY, null) //
         Log.d("UserIdManager", "Getting user ID: $userId")
         return userId
     }
 
-    // Clear the userId from SharedPreferences
     fun clearUserId() {
         preferences.edit().remove(KEY).apply()
         Log.d("UserIdManager", "Cleared user ID")
     }
 
-    // Check if a valid userId is stored
     fun isLoggedIn(): Boolean {
         val userId = getUserId()
         return userId != null && userId != "0" // Check for null and "0"

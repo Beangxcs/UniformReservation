@@ -22,7 +22,7 @@ class ViewUniform : AppCompatActivity() {
         val toolbarIcon = findViewById<ImageView>(R.id.toolbar_icon)
         val toolbarTitle = findViewById<TextView>(R.id.tv_profile)
         val imageView = findViewById<ImageView>(R.id.myImageView)
-        val nameEditText = findViewById<EditText>(R.id.Etcorpomale)
+        val nameEditText = findViewById<EditText>(R.id.tvrso)
         val descriptionTextView = findViewById<TextView>(R.id.tvDescription)
         val sizeAvailableTextView = findViewById<TextView>(R.id.tvSizeAvailable)
 

@@ -71,7 +71,7 @@
                 app:layout_constraintHorizontal_bias="0.5" />
 
             <EditText
-                android:id="@+id/Etcorpomale"
+                android:id="@+id/tvrso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -96,13 +96,13 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Etcorpomale" />
+                app:layout_constraintTop_toBottomOf="@id/tvrso" />
 
             <TextView
                 android:id="@+id/tvSizeAvailable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="Available Sizes: S, M, L, XL"
                 android:textColor="@color/black"

@@ -9,43 +9,45 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@drawable/rounded_corner">
 
-        <!-- University Logo -->
+
         <ImageView
-            android:id="@+id/univ_logo"
+            android:id="@+id/citelogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:maxWidth="100dp"
             android:maxHeight="100dp"
             android:adjustViewBounds="true"
             android:src="@drawable/citelogo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+        />
 
-        <!-- RSO Text -->
         <TextView
             android:id="@+id/uniformRSO"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="RSO"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:ellipsize="end"
-            android:maxLines="1"
-            app:layout_constraintStart_toEndOf="@id/univ_logo"
-            app:layout_constraintTop_toTopOf="@id/univ_logo"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/citelogo"
+            app:layout_constraintTop_toTopOf="@id/citelogo" />
 
-        <!-- Size -->
         <TextView
             android:id="@+id/uniformSizes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Size: Small"
+            android:text="Size:"
             android:textSize="17sp"
             android:textColor="@android:color/black"
             android:ellipsize="end"
